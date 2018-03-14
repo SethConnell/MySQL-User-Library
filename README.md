@@ -5,7 +5,7 @@ I created this library to make building user profiles easier with PHP and MySQL.
 First, you need to install Medoo framework using composer into your local (or global directory). Look up how to do that.
 
 ## Basic table setup.
-```
+```php
 <?php
 	
   // These variables must be set before requiring UserLibrary.php for the library to work.
