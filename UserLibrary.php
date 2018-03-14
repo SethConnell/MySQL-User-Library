@@ -72,10 +72,17 @@
 				echo "Uh oh. Something broke.";
 			} else {
 				    setUserSession($user, $password);
-					login($id, $hash);
-					if (verifyLogin()) {
-						echo "It worked!";
+					
+					$getid = $database->select($usertablename, "id", [
+					"username" => $user
+					]);
+					if ($getid){
+						login($getid, $newpassword);
+						if (verifyLogin()) {
+							echo "It worked!";
+						}
 					}
+					else {"There's been a slight problem.";}
 				}
 		};
 
